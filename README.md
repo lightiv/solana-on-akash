@@ -1,6 +1,6 @@
 # solana-on-akash
 
-### This repo is for setting up a Solana node deployed to Akash Network's DeCloud.  I am using a non-native method of accessing the node via SSL to run the Solana Setup script I created.
+### This repo is for setting up a Solana node deployed to Akash Network's DeCloud.  I am using a non-native method of accessing the node via SSL to run the Solana Setup script I created.  I believe this provides the greates flexibility and insight in to your deployment.  You also know exactly what is in your deployment.  
 
 ### Step One - Setup The Environment
 
@@ -80,6 +80,17 @@ akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSE
 
 ### Step Twelve - Correct And The setup-solana.sh file
 
+Here you will need the connection randomly assigned port for the SSH.  You will get that from above or by running:  
+```  
+akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
+```
+
+Connect to your Solana instance:  
+```  
+ssh -p <SSH PORT> -i ~/.ssh/<YOUR SSH PRIVATE KEY> <USERNAME>@<YOUR VPS PUBLIC IP ADDRESS>  
+```  
+Once connected continue with the following:
+
 ```  
 cd /root  
   
@@ -124,6 +135,17 @@ Type the following:
 . setup-solana.sh  
 ```
 The script will run.  When you are asked to enter a keyring password, ** DO NOT MESS UP. ** The script will continue and your will have to open another terminal window to manually create the keys.  
+
+Do not work, just run the following:  
+```  
+echo "Create a File System wallet.  Not recommends for storing large amounts of SOL!  Use paper or Leger based wallets"  
+mkdir ~/<YOUR_NAME>-solana-wallet  
+solana-keygen new --outfile ~/<YOUR_NAME>-solana-wallet/<YOUR_NAME>.json > ~/mnumonic.txt  
+  
+echo "Your public key/address is saved to ~/mnumonic.txt."  
+solana-keygen pubkey ~/<YOUR_NAME>-solana-wallet/<YOUR_NAME>.json 
+```  
   
 # If everything went well your are running a Solana node.
 
+![SkyNet | Validators](http://paullovette.com/wp-content/uploads/2021/06/solana-on-akash.jpg)
