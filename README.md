@@ -1,6 +1,6 @@
 # solana-on-akash
 
-### This repo is for setting up a Solana node deployed to Akash Network's DeCloud.  I am using a non-native method of accessing the node via SSL to run the Solana Setup script I created.  I believe this provides the greates flexibility and insight in to your deployment.  You also know exactly what is in your deployment.  
+### This repo is for setting up a Solana, v1.6.10, node deployed to Akash Network's DeCloud.  I am using a non-native method of accessing the node via SSL to run the Solana Setup script I created.  I believe this provides the greates flexibility and insight in to your deployment.  You also know exactly what is in your deployment.  
 
 ### Step One - Setup The Environment
 
