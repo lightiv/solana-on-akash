@@ -1,0 +1,94 @@
+---
+version: "2.0"
+
+services:
+  web:
+    image: paullovette/solana-node-ready:latest
+    env:
+      - sshport=22
+      - pubkey=<YOUR_SSH_PUBLIC_KEY>
+    expose:
+      - port: 22
+        as: 22
+        to:
+          - global: true
+      - port: 8899
+        as: 8899
+        to:
+          - global: true
+      - port: 8900
+        as: 8900
+        to:
+          - global: true
+      - port: 8901
+        as: 8901
+        to:
+          - global: true
+      - port: 8902
+        as: 8902
+        to:
+          - global: true
+      - port: 8000
+        as: 8000
+        to:
+          - global: true
+      - port: 8001
+        as: 8001
+        to:
+          - global: true
+      - port: 8002
+        as: 8002
+        to:
+          - global: true
+      - port: 8003
+        as: 8003
+        to:
+          - global: true
+      - port: 8004
+        as: 8004
+        to:
+          - global: true
+      - port: 8005
+        as: 8005
+        to:
+          - global: true
+      - port: 8006
+        as: 8006
+        to:
+          - global: true
+      - port: 8007
+        as: 8007
+        to:
+          - global: true
+      - port: 8008
+        as: 8008
+        to:
+          - global: true
+
+profiles:
+  compute:
+    web:
+      resources:
+        cpu:
+          units: 5
+        memory:
+          size: 16Gi
+        storage:
+          size: 200Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+      pricing:
+        web:
+          denom: uakt
+          amount: 1000
+
+deployment:
+  web:
+    dcloud:
+      profile: web
+      count: 1
