@@ -119,7 +119,8 @@ solana --version
 solana cluster-version  
 echo "The above two version should match!"  
   
-echo "Create a File System wallet.  Not recommends for storing large amounts of SOL!  Use paper or Leger based wallets"  
+echo "Create a File System wallet.  Not recommends for storing large amounts of SOL!  \
+    Use paper or Leger based wallets"  
 mkdir ~/<YOUR_NAME>-solana-wallet  
 solana-keygen new --outfile ~/<YOUR_NAME>-solana-wallet/<YOUR_NAME>.json > ~/mnumonic.txt  
   
@@ -146,7 +147,8 @@ The script will run.  When you are asked to enter a keyring password, ** DO NOT 
 
 Do not work, just run the following:  
 ```  
-echo "Create a File System wallet.  Not recommends for storing large amounts of SOL!  Use paper or Leger based wallets"  
+echo "Create a File System wallet.  Not recommends for storing large amounts of SOL!  \
+    Use paper or Leger based wallets"  
 mkdir ~/<YOUR_NAME>-solana-wallet  
 solana-keygen new --outfile ~/<YOUR_NAME>-solana-wallet/<YOUR_NAME>.json > ~/mnumonic.txt  
   
