@@ -55,7 +55,8 @@ AKASH_PROVIDER=<PROVIDER_ADDRESS_SELECTED_FROM_STEP_SIX>
 ### Step Eight - Create Your Lease 
 
 ```  
-akash tx market lease create --from $AKASH_KEY_NAME --fees 5000uakt  --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE  
+akash tx market lease create --from $AKASH_KEY_NAME --fees 5000uakt  --owner $AKASH_ACCOUNT_ADDRESS \
+    --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE  
 ```  
 
 ### Step Nine - View Lease
@@ -69,7 +70,8 @@ akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE 
 
 This fives the Provider the necessary information to deploy Solana.  There will be NO out put from this command.
 ```  
-akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME  
+akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER \
+    --home ~/.akash --from $AKASH_KEY_NAME  
 ```  
 
 ### Step Eleven - View Access urls  
@@ -77,14 +79,16 @@ akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --
 If these are listed you have successfully deploy Solana
 
 ```  
-akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER  
+akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME \
+    --provider $AKASH_PROVIDER  
 ```  
 
 ### Step Twelve - Correct And The setup-solana.sh file
 
 Here you will need the connection randomly assigned port for the SSH.  You will get that from above or by running:  
 ```  
-akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
+akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME \
+    --provider $AKASH_PROVIDER
 ```
 
 Connect to your Solana instance:  
