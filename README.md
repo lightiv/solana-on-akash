@@ -56,14 +56,16 @@ AKASH_PROVIDER=<PROVIDER_ADDRESS_SELECTED_FROM_STEP_SIX>
 
 ```  
 akash tx market lease create --from $AKASH_KEY_NAME --fees 5000uakt  --owner $AKASH_ACCOUNT_ADDRESS \
-    --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE  
+    --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER \
+    --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE  
 ```  
 
 ### Step Nine - View Lease
 
 This is to make sure everything has worked.  
 ```  
-akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ -o text  
+akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE \
+    --dseq $AKASH_DSEQ -o text  
 ```  
 
 ### Step Ten - Upload Manifest
