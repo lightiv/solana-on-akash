@@ -19,13 +19,15 @@ AKASH_KEY_NAME=<YOUR_FUNDING_ADDRESS_KEY_NAME>
 ### Step Three - Create a certificate for <YOUR_FUNDING_ADDRESS>. You only do this once and it is stored in your ~/.akash directory.  You can copy it to a new machine if needed.
 
 ```  
-akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt  
+akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND \ 
+    --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt  
 ```
 
 ### Step Four - Deploy Your Request
 
 ```  
-akash tx deployment create deploy.yml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y  
+akash tx deployment create deploy.yml --from $AKASH_KEY_NAME --node $AKASH_NODE \
+    --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y  
 ```  
 
 ### Step Five - Set The Following Variables
